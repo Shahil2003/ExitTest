@@ -1,0 +1,27 @@
+package testcases;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import base.TestBase;
+import pages.TestPage;
+
+public class TestCase extends TestBase{
+	
+	TestPage test;
+	
+	@BeforeClass
+	public void config() {
+		test=new TestPage(driver);
+	}
+	
+	@Test
+	public void testcase1() {
+		test.select_category();
+		test.select_product();
+		test.addto_cart();
+		test.goto_cart();
+		test.delete_product();
+	}
+	
+}

@@ -1,0 +1,11 @@
+package base;
+
+public class LocatorConstants {
+
+	public static String category = "//img[@alt='Headsets']";
+	
+	public static String button = "//button[contains(text(), 'Add to cart')]";
+	
+	public static String cart = "//a[@id='nav-cart']";
+
+}

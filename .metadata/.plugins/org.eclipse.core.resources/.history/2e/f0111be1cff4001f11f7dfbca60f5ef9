@@ -1,0 +1,29 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class TestPage {
+	WebDriver driver;
+	
+	public TestPage(WebDriver driver) {
+		this.driver=driver;
+	}
+	
+	public void SelectCategory() {
+		WebElement category=driver.findElement(By.xpath("//img[@alt='Headsets']"));
+		category.click();
+	}
+	
+	public void AddtoCart() {
+		WebElement product=driver.findElement(By.xpath("//button[@id='a-autoid-2-announce']"));
+		product.click();
+	}
+	
+	public void GotoCart() {
+		WebElement cart=driver.findElement(By.xpath("//span[@class='nav-cart-icon nav-sprite']"));
+		cart.click();
+	}
+
+}

@@ -1,0 +1,19 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class TestPage {
+	WebDriver driver;
+	
+	public TestPage(WebDriver driver) {
+		this.driver=driver;
+	}
+	
+	public void SelectCategory() {
+		WebElement category=driver.findElement(By.xpath("//img[@alt='Headsets']"));
+		category.click();
+	}
+
+}

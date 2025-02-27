@@ -1,0 +1,42 @@
+package pages;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class TestPage {
+	WebDriver driver;
+	
+	public TestPage(WebDriver driver) {
+		this.driver=driver;
+	}
+	
+	public void select_category() {
+		WebElement category=driver.findElement(By.xpath("//img[@alt='Headsets']"));
+		category.click();
+	}
+	
+	public void addto_cart() {
+		WebElement product=driver.findElement(By.xpath("//button[@id='a-autoid-2-announce']"));
+		product.click();
+	}
+	
+	public void goto_cart() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement cartIcon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='nav-cart-icon nav-sprite']")));
+		cartIcon.click();
+
+	}
+	
+	public void delete_product() {
+		WebElement delete=driver.findElement(By.xpath("//input[@value='Delete' and contains(@aria-label, 'Delete Razer BlackShark V2 X')]"));
+		delete.click();
+	}
+	
+
+
+}
